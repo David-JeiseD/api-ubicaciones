@@ -19,6 +19,8 @@ return new class extends Migration
             
             // Campos nuevos útiles
             $table->string('iso_code', 10)->nullable(); // Ej: PE-AYA (Estándar internacional)
+            $table->decimal('latitude', 10, 8)->nullable();
+            $table->decimal('longitude', 11, 8)->nullable();
             $table->integer('population')->nullable(); // Población aprox.
             $table->decimal('surface_km2', 10, 2)->nullable(); // Superficie en km²
             
