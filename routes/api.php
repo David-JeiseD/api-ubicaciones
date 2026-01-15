@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 
-
+// ---------------------------------------------------------
+// 1. AUTENTICACIÓN (Fábrica de Tokens)
+// ---------------------------------------------------------
 Route::post('/login', function (Request $request) {
     $request->validate([
         'email' => 'required|email',
@@ -28,40 +30,45 @@ Route::post('/login', function (Request $request) {
 
     return response()->json([
         'message' => 'Autenticado exitosamente',
-        'token' => $token, // GUARDA ESTE TOKEN, es tu llave maestra
+        'token' => $token,
         'token_type' => 'Bearer'
     ]);
 });
 
+// ---------------------------------------------------------
+// 2. RUTAS PÚBLICAS (Lectura / GET)
+// Cualquiera puede consultar el mapa sin token
+// ---------------------------------------------------------
 
-Route::get('/dame-mi-token', function () {
-    // 1. Buscamos al usuario que creamos con Tinker
-    $user = \App\Models\User::where('email', 'admin@saas.com')->first();
-    
-    // 2. Si no existe, error
-    if (!$user) return 'El usuario no existe. Crea uno con Tinker primero.';
+// Departamentos
+Route::get('/departments', [LocationController::class, 'index']);
+Route::get('/departments/{id}', [LocationController::class, 'showDepartment']);
 
-    // 3. Le creamos un token nuevo
-    $token = $user->createToken('token-de-prueba')->plainTextToken;
+// Provincias
+Route::get('/departments/{id}/provinces', [LocationController::class, 'provincesByDepartment']);
+Route::get('/provinces/{id}', [LocationController::class, 'showProvince']);
 
-    // 4. Te lo mostramos en pantalla
-    return [
-        'tu_token_secreto' => $token
-    ];
-});
+// Distritos
+Route::get('/provinces/{id}/districts', [LocationController::class, 'districtsByProvince']);
+Route::get('/districts/{id}', [LocationController::class, 'showDistrict']);
+
+// Buscador
+Route::get('/search', [LocationController::class, 'search']);
+
+
+// ---------------------------------------------------------
+// 3. RUTAS PRIVADAS (Escritura / Admin)
+// Requieren Token Bearer para entrar
+// ---------------------------------------------------------
 Route::middleware('auth:sanctum')->group(function () {
-    // Departamentos
-    Route::get('/departments', [LocationController::class, 'index']);
-    Route::get('/departments/{id}', [LocationController::class, 'showDepartment']);
+    
+    // CREAR (Ya tienes el método store en el controlador)
+    Route::post('/districts', [LocationController::class, 'store']);
 
-    // Provincias
-    Route::get('/departments/{id}/provinces', [LocationController::class, 'provincesByDepartment']);
-    Route::get('/provinces/{id}', [LocationController::class, 'showProvince']);
+    // ACTUALIZAR (PENDIENTE: Programar método update)
+    Route::put('/districts/{id}', [LocationController::class, 'update']);
 
-    // Distritos
-    Route::get('/provinces/{id}/districts', [LocationController::class, 'districtsByProvince']);
-    Route::get('/districts/{id}', [LocationController::class, 'showDistrict']);
-
-    // Buscador
-    Route::get('/search', [LocationController::class, 'search']);
+    // ELIMINAR (PENDIENTE: Programar método destroy)
+    Route::delete('/districts/{id}', [LocationController::class, 'destroy']);
+    
 });

@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use App\Http\Resources\DepartmentResource;
 use App\Http\Resources\ProvinceResource;
 use App\Http\Resources\DistrictResource;
+//formrequest
+use App\Http\Requests\StoreDistrictRequest;
+use App\Http\Requests\UpdateDistrictRequest;
 
 class LocationController extends Controller
 {
@@ -122,5 +125,51 @@ class LocationController extends Controller
 
         // Incluso en la búsqueda devolvemos los datos con el formato bonito
         return DistrictResource::collection($districts);
+    }
+
+    public function update(UpdateDistrictRequest $request, $id)
+    {
+        $district = District::find($id);
+
+        if (!$district) {
+            return response()->json(['message' => 'Distrito no encontrado'], 404);
+        }
+
+        // Actualizamos con los datos ya validados y limpios
+        $district->update($request->validated());
+
+        return response()->json([
+            'message' => 'Distrito actualizado correctamente',
+            'data' => new DistrictResource($district)
+        ], 200);
+    }
+    
+    public function destroy($id)
+    {
+        $district = District::find($id);
+
+        if (!$district) {
+            return response()->json(['message' => 'Distrito no encontrado'], 404);
+        }
+
+        $district->delete();
+
+        return response()->json([
+            'message' => 'Distrito eliminado correctamente'
+        ], 200);
+    }
+
+    public function store(StoreDistrictRequest $request)
+    {
+        // ¡Magia! Si el código llega aquí, es que YA pasó la validación.
+        // Laravel lo validó automáticamente antes de entrar al método.
+        
+        // $request->validated() devuelve solo los campos que pasaron las reglas (seguridad extra)
+        $district = District::create($request->validated());
+
+        return response()->json([
+            'message' => 'Distrito creado exitosamente',
+            'data' => new DistrictResource($district)
+        ], 201);
     }
 }
