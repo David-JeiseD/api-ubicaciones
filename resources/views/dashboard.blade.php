@@ -79,4 +79,20 @@
             </div>
         </div>
     </div>
+
+    <div class="mt-4 p-4 bg-gray-100 rounded">
+    <h3 class="text-lg font-bold">Estado del Plan: {{ strtoupper(Auth::user()->plan) }}</h3>
+    <p>Créditos: <strong>{{ Auth::user()->credits }}</strong></p>
+    
+    @if(Auth::user()->plan_expires_at)
+        <p class="text-sm">Vence: {{ Auth::user()->plan_expires_at->format('d/m/Y H:i') }}</p>
+    @endif
+
+    <form action="{{ route('simulate.payment') }}" method="POST" class="mt-3">
+        @csrf
+        <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+            🚀 Simular Pago Premium (20,000 créditos)
+        </button>
+    </form>
+</div>
 </x-app-layout>

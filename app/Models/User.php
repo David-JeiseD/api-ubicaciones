@@ -23,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'plan',             // <--- AGREGAR ESTO
+        'credits',          // <--- AGREGAR ESTO
+        'plan_expires_at',  // <--- AGREGAR ESTO
     ];
 
     /**
@@ -40,11 +43,23 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'plan_expires_at' => 'datetime', // Importante para que Laravel lo reconozca como fecha
+    ];
+    
+    public function upgradePlan($planName, $credits, $months)
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        // Calculamos la fecha de inicio (hoy o cuando venza su plan actual)
+        $start = ($this->plan_expires_at && $this->plan_expires_at->isFuture()) 
+                 ? $this->plan_expires_at 
+                 : now();
+    
+        $this->update([
+            'plan' => $planName,
+            'credits' => $this->credits + $credits,
+            'plan_expires_at' => $start->addMonths($months),
+        ]);
     }
 }

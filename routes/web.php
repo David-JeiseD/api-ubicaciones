@@ -25,4 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/simulate-payment', function () {
+    $user = auth()->user();
+    $user->upgradePlan('premium', 20000, 1); // Simula compra de 20k créditos por 1 mes
+    return back()->with('status', '¡Simulación exitosa! Ahora eres Premium con 20,000 créditos.');
+})->name('simulate.payment');
+
 require __DIR__.'/auth.php';
