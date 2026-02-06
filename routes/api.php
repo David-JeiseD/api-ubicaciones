@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LocationController;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use App\Http\Middleware\DeductCredit;
 
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +41,7 @@ Route::post('/login', function (Request $request) {
 // ---------------------------------------------------------
 
 // Departamentos
-Route::get('/departments', [LocationController::class, 'index']);
+//Route::get('/departments', [LocationController::class, 'index']);
 Route::get('/departments/{id}', [LocationController::class, 'showDepartment']);
 
 // Provincias
@@ -60,15 +60,15 @@ Route::get('/search', [LocationController::class, 'search']);
 // 3. RUTAS PRIVADAS (Escritura / Admin)
 // Requieren Token Bearer para entrar
 // ---------------------------------------------------------
-Route::middleware('auth:sanctum')->group(function () {
+// Agregamos 'throttle:api' al array
+Route::middleware(['auth:sanctum', 'throttle:api', DeductCredit::class])->group(function () {
     
-    // CREAR (Ya tienes el método store en el controlador)
+    // Tus rutas...
+    Route::get('/departments', [LocationController::class, 'index']); // La de prueba
+    
     Route::post('/districts', [LocationController::class, 'store']);
-
-    // ACTUALIZAR (PENDIENTE: Programar método update)
+    
     Route::put('/districts/{id}', [LocationController::class, 'update']);
-
-    // ELIMINAR (PENDIENTE: Programar método destroy)
     Route::delete('/districts/{id}', [LocationController::class, 'destroy']);
     
 });

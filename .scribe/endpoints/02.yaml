@@ -1,0 +1,264 @@
+name: 'Gestión Administrativa (Privado)'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/districts
+    metadata:
+      custom: []
+      groupName: 'Gestión Administrativa (Privado)'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crear Distrito'
+      description: 'Registra un nuevo distrito. Requiere Token de administrador.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'El nombre oficial del distrito. Must not be greater than 100 characters.'
+        required: true
+        example: Miraflores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      ubigeo:
+        custom: []
+        name: ubigeo
+        description: 'El código único de 6 dígitos (INEI/RENIEC). Debe ser único. Must be 6 characters.'
+        required: true
+        example: '150122'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      province_id:
+        custom: []
+        name: province_id
+        description: 'El ID de la provincia a la que pertenece. The <code>id</code> of an existing record in the provinces table.'
+        required: true
+        example: 120
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      latitude:
+        custom: []
+        name: latitude
+        description: 'Coordenada geográfica (Latitud).'
+        required: false
+        example: -12.111062
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      longitude:
+        custom: []
+        name: longitude
+        description: 'Coordenada geográfica (Longitud).'
+        required: false
+        example: -77.031591
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      altitude_masl:
+        custom: []
+        name: altitude_masl
+        description: 'Altitud en metros sobre el nivel del mar.'
+        required: false
+        example: 79
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      surface_km2:
+        custom: []
+        name: surface_km2
+        description: 'Superficie total en kilómetros cuadrados.'
+        required: false
+        example: 9.62
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: Miraflores
+      ubigeo: '150122'
+      province_id: 120
+      latitude: -12.111062
+      longitude: -77.031591
+      altitude_masl: 79
+      surface_km2: 9.62
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/districts/{id}'
+    metadata:
+      custom: []
+      groupName: 'Gestión Administrativa (Privado)'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Actualizar Distrito'
+      description: 'Modifica los datos de un distrito existente. Requiere Token.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID del distrito a editar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'El nombre oficial del distrito. Must not be greater than 100 characters.'
+        required: false
+        example: Miraflores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      ubigeo:
+        custom: []
+        name: ubigeo
+        description: 'El código único de 6 dígitos (INEI/RENIEC). Debe ser único. Must be 6 characters.'
+        required: false
+        example: '150122'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      province_id:
+        custom: []
+        name: province_id
+        description: 'El ID de la provincia a la que pertenece. The <code>id</code> of an existing record in the provinces table.'
+        required: false
+        example: 120
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      latitude:
+        custom: []
+        name: latitude
+        description: 'Coordenada geográfica (Latitud).'
+        required: false
+        example: -12.111062
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      longitude:
+        custom: []
+        name: longitude
+        description: 'Coordenada geográfica (Longitud).'
+        required: false
+        example: -77.031591
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: Miraflores
+      ubigeo: '150122'
+      province_id: 120
+      latitude: -12.111062
+      longitude: -77.031591
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/districts/{id}'
+    metadata:
+      custom: []
+      groupName: 'Gestión Administrativa (Privado)'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Eliminar Distrito'
+      description: 'Borra un distrito de la base de datos permanentemente. Requiere Token.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID del distrito a eliminar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

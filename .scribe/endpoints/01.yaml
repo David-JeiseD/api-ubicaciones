@@ -1,0 +1,355 @@
+name: 'Lectura Pública'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/departments
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Listar Departamentos'
+      description: 'Obtiene la lista completa de los 24 departamentos y el Callao.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1,"nombre":"AMAZONAS","codigo_ubigeo":"01","codigo_iso":"PE-AMA","estadisticas":{"poblacion":472991,"superficie_km2":"39249.13"},"mapa":{"latitud":"-6.22940000","longitud":"-77.87280000"}},{"id":2,"nombre":"ANCASH","codigo_ubigeo":"02","codigo_iso":"PE-ANC","estadisticas":{"poblacion":1246247,"superficie_km2":"35881.30"},"mapa":{"latitud":"-9.52970000","longitud":"-77.52920000"}},{"id":3,"nombre":"APURIMAC","codigo_ubigeo":"03","codigo_iso":"PE-APU","estadisticas":{"poblacion":460315,"superficie_km2":"20895.77"},"mapa":{"latitud":"-13.62890000","longitud":"-72.88610000"}},{"id":4,"nombre":"AREQUIPA","codigo_ubigeo":"04","codigo_iso":"PE-ARE","estadisticas":{"poblacion":1556247,"superficie_km2":"63343.95"},"mapa":{"latitud":"-16.39330000","longitud":"-71.52890000"}},{"id":5,"nombre":"AYACUCHO","codigo_ubigeo":"05","codigo_iso":"PE-AYA","estadisticas":{"poblacion":690055,"superficie_km2":"43803.26"},"mapa":{"latitud":"-13.16030000","longitud":"-74.22530000"}},{"id":6,"nombre":"CAJAMARCA","codigo_ubigeo":"06","codigo_iso":"PE-CAJ","estadisticas":{"poblacion":1603520,"superficie_km2":"33304.32"},"mapa":{"latitud":"-7.15470000","longitud":"-78.51080000"}},{"id":7,"nombre":"CUSCO","codigo_ubigeo":"07","codigo_iso":"PE-CUS","estadisticas":{"poblacion":1460966,"superficie_km2":"71986.50"},"mapa":{"latitud":"-13.51920000","longitud":"-71.97670000"}},{"id":8,"nombre":"HUANCAVELICA","codigo_ubigeo":"08","codigo_iso":"PE-HUV","estadisticas":{"poblacion":435152,"superficie_km2":"22125.20"},"mapa":{"latitud":"-12.78690000","longitud":"-74.97140000"}},{"id":9,"nombre":"HUANUCO","codigo_ubigeo":"09","codigo_iso":"PE-HUC","estadisticas":{"poblacion":865820,"superficie_km2":"37263.44"},"mapa":{"latitud":"-9.93000000","longitud":"-76.23970000"}},{"id":10,"nombre":"ICA","codigo_ubigeo":"10","codigo_iso":"PE-ICA","estadisticas":{"poblacion":938258,"superficie_km2":"21305.51"},"mapa":{"latitud":"-14.06360000","longitud":"-75.72920000"}},{"id":11,"nombre":"JUNIN","codigo_ubigeo":"11","codigo_iso":"PE-JUN","estadisticas":{"poblacion":1408224,"superficie_km2":"44328.80"},"mapa":{"latitud":"-12.07080000","longitud":"-75.20890000"}},{"id":12,"nombre":"LA LIBERTAD","codigo_ubigeo":"12","codigo_iso":"PE-LAL","estadisticas":{"poblacion":2054620,"superficie_km2":"25495.42"},"mapa":{"latitud":"-8.10000000","longitud":"-79.03060000"}},{"id":13,"nombre":"LAMBAYEQUE","codigo_ubigeo":"13","codigo_iso":"PE-LAM","estadisticas":{"poblacion":1393148,"superficie_km2":"14461.52"},"mapa":{"latitud":"-6.76690000","longitud":"-79.85060000"}},{"id":14,"nombre":"LIMA","codigo_ubigeo":"14","codigo_iso":"PE-LIM","estadisticas":{"poblacion":11261066,"superficie_km2":"34823.52"},"mapa":{"latitud":"-12.04530000","longitud":"-77.03080000"}},{"id":15,"nombre":"LORETO","codigo_ubigeo":"15","codigo_iso":"PE-LOR","estadisticas":{"poblacion":1154748,"superficie_km2":"368799.48"},"mapa":{"latitud":"-3.74810000","longitud":"-73.24420000"}},{"id":16,"nombre":"MADRE DE DIOS","codigo_ubigeo":"16","codigo_iso":"PE-MDD","estadisticas":{"poblacion":177570,"superficie_km2":"85300.54"},"mapa":{"latitud":"-12.59360000","longitud":"-69.17670000"}},{"id":17,"nombre":"MOQUEGUA","codigo_ubigeo":"17","codigo_iso":"PE-MOQ","estadisticas":{"poblacion":197622,"superficie_km2":"15733.88"},"mapa":{"latitud":"-17.19420000","longitud":"-70.93330000"}},{"id":18,"nombre":"PASCO","codigo_ubigeo":"18","codigo_iso":"PE-PAS","estadisticas":{"poblacion":294379,"superficie_km2":"25025.84"},"mapa":{"latitud":"-10.68250000","longitud":"-76.25690000"}},{"id":19,"nombre":"PIURA","codigo_ubigeo":"19","codigo_iso":"PE-PIU","estadisticas":{"poblacion":2069445,"superficie_km2":"35656.18"},"mapa":{"latitud":"-5.15250000","longitud":"-80.65780000"}},{"id":20,"nombre":"PUNO","codigo_ubigeo":"20","codigo_iso":"PE-PUN","estadisticas":{"poblacion":1279288,"superficie_km2":"66993.52"},"mapa":{"latitud":"-15.84030000","longitud":"-70.02810000"}},{"id":21,"nombre":"SAN MARTIN","codigo_ubigeo":"21","codigo_iso":"PE-SAM","estadisticas":{"poblacion":965431,"superficie_km2":"51305.78"},"mapa":{"latitud":"-6.03470000","longitud":"-76.97420000"}},{"id":22,"nombre":"TACNA","codigo_ubigeo":"22","codigo_iso":"PE-TAC","estadisticas":{"poblacion":379400,"superficie_km2":"16075.73"},"mapa":{"latitud":"-18.00190000","longitud":"-70.25190000"}},{"id":23,"nombre":"TUMBES","codigo_ubigeo":"23","codigo_iso":"PE-TUM","estadisticas":{"poblacion":248097,"superficie_km2":"4668.50"},"mapa":{"latitud":"-3.57110000","longitud":"-80.45920000"}},{"id":24,"nombre":"CALLAO","codigo_ubigeo":"24","codigo_iso":"PE-CAL","estadisticas":{"poblacion":1147951,"superficie_km2":"145.91"},"mapa":{"latitud":"-12.06310000","longitud":"-77.14690000"}},{"id":25,"nombre":"UCAYALI","codigo_ubigeo":"25","codigo_iso":"PE-UCA","estadisticas":{"poblacion":632859,"superficie_km2":"102199.28"},"mapa":{"latitud":"-8.36810000","longitud":"-74.54330000"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/departments/{id}'
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ver Departamento'
+      description: 'Obtiene el detalle de un departamento específico por su ID.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID del departamento (Ej: 15).'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":17,"nombre":"MOQUEGUA","codigo_ubigeo":"17","codigo_iso":"PE-MOQ","estadisticas":{"poblacion":197622,"superficie_km2":"15733.88"},"mapa":{"latitud":"-17.19420000","longitud":"-70.93330000"}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/departments/{id}/provinces'
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Provincias de un Departamento'
+      description: 'Lista todas las provincias que pertenecen al departamento indicado.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID del departamento padre.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1701,"nombre":"MARISCAL NIETO","codigo_ubigeo":"1701","departamento_id":17,"capital":"Moquegua","estadisticas":{"poblacion":null,"superficie_km2":"8671.58","altitud_msnm":1428},"mapa":{"latitud":"-17.19420000","longitud":"-70.93330000"}},{"id":1702,"nombre":"GENERAL SANCHEZ CERRO","codigo_ubigeo":"1702","departamento_id":17,"capital":"Omate","estadisticas":{"poblacion":null,"superficie_km2":"5681.71","altitud_msnm":2169},"mapa":{"latitud":"-16.67360000","longitud":"-70.97060000"}},{"id":1703,"nombre":"ILO","codigo_ubigeo":"1703","departamento_id":17,"capital":"Ilo","estadisticas":{"poblacion":null,"superficie_km2":"1380.59","altitud_msnm":33},"mapa":{"latitud":"-17.62500000","longitud":"-71.34330000"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provinces/{id}'
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ver Provincia'
+      description: 'Muestra el detalle de una provincia específica.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID de la provincia.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: '{"message":"Provincia no encontrada"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provinces/{id}/districts'
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Distritos de una Provincia'
+      description: 'Lista todos los distritos que pertenecen a una provincia.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID de la provincia padre.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: '{"message":"Provincia no encontrada"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/districts/{id}'
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ver Distrito'
+      description: 'Muestra el detalle completo (coordenadas, ubigeo) de un distrito.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'El ID del distrito (Ubigeo).'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: '{"message":"Distrito no encontrado"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/search
+    metadata:
+      custom: []
+      groupName: 'Lectura Pública'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Buscar Distritos'
+      description: 'Busca distritos por coincidencia de nombre.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      name:
+        custom: []
+        name: name
+        description: 'El nombre a buscar.'
+        required: true
+        example: Miraflores
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      name: Miraflores
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":40107,"nombre":"MIRAFLORES","codigo_ubigeo":"040107","provincia_id":401,"codigo_postal":null,"estadisticas":{"superficie_km2":"28.68","altitud_msnm":2450},"mapa":{"latitud":"-16.39470000","longitud":"-71.52250000"}},{"id":90406,"nombre":"MIRAFLORES","codigo_ubigeo":"090406","provincia_id":904,"codigo_postal":null,"estadisticas":{"superficie_km2":"96.74","altitud_msnm":3688},"mapa":{"latitud":"-9.49390000","longitud":"-76.81860000"}},{"id":140115,"nombre":"MIRAFLORES","codigo_ubigeo":"140115","provincia_id":1401,"codigo_postal":null,"estadisticas":{"superficie_km2":"9.62","altitud_msnm":125},"mapa":{"latitud":"-12.12170000","longitud":"-77.02920000"}},{"id":140136,"nombre":"SAN JUAN DE MIRAFLORES","codigo_ubigeo":"140136","provincia_id":1401,"codigo_postal":null,"estadisticas":{"superficie_km2":"22.97","altitud_msnm":133},"mapa":{"latitud":"-12.16360000","longitud":"-76.96360000"}},{"id":140718,"nombre":"MIRAFLORES","codigo_ubigeo":"140718","provincia_id":1407,"codigo_postal":null,"estadisticas":{"superficie_km2":"226.24","altitud_msnm":3677},"mapa":{"latitud":"-12.27440000","longitud":"-75.85030000"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

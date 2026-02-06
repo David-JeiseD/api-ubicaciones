@@ -40,4 +40,38 @@ class StoreDistrictRequest extends FormRequest
             'province_id.exists' => 'La provincia seleccionada no existe.'
         ];
     }
+    
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'El nombre oficial del distrito.',
+                'example' => 'Miraflores',
+            ],
+            'ubigeo' => [
+                'description' => 'El código único de 6 dígitos (INEI/RENIEC). Debe ser único.',
+                'example' => '150122',
+            ],
+            'province_id' => [
+                'description' => 'El ID de la provincia a la que pertenece.',
+                'example' => 120,
+            ],
+            'latitude' => [
+                'description' => 'Coordenada geográfica (Latitud).',
+                'example' => -12.111062,
+            ],
+            'longitude' => [
+                'description' => 'Coordenada geográfica (Longitud).',
+                'example' => -77.031591,
+            ],
+            'altitude_masl' => [
+                'description' => 'Altitud en metros sobre el nivel del mar.',
+                'example' => 79,
+            ],
+            'surface_km2' => [
+                'description' => 'Superficie total en kilómetros cuadrados.',
+                'example' => 9.62,
+            ],
+        ];
+    }
 }
