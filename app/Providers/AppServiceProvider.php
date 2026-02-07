@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,5 +40,8 @@ class AppServiceProvider extends ServiceProvider
             // 2. Si es invitado (Sin token, público) -> 10 peticiones por IP
             return Limit::perMinute(10)->by($request->ip());
         });
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
